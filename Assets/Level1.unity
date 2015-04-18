@@ -443,7 +443,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 226155260}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.76999998, y: 1.71000004, z: 0}
+  m_LocalPosition: {x: -3.76999998, y: 1.71000004, z: 1}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 936838700}
@@ -1411,7 +1411,7 @@ GameObject:
   - 114: {fileID: 936838703}
   - 50: {fileID: 936838705}
   - 61: {fileID: 936838704}
-  - 114: {fileID: 936838706}
+  - 114: {fileID: 936838707}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1528,7 +1528,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!114 &936838706
+--- !u!114 &936838707
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -2068,7 +2068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   posplayer: {fileID: 936838700}
   possword: {fileID: 1282639965}
-  anim2: {fileID: 0}
+  ani: {fileID: 0}
 --- !u!95 &1282639969
 Animator:
   serializedVersion: 3
