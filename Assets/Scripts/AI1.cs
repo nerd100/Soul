@@ -38,7 +38,7 @@ public class AI1 : MonoBehaviour {
 		}
 
 		if (distance < 2.5 && !stun) {
-			Xdif = Player.x - transform.position .x;
+			Xdif = Player.x - transform.position.x;
 			Ydif = Player.y - transform.position.y;
 
 			Playerdirection = new Vector2 (Xdif, Ydif);
