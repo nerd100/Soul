@@ -6,7 +6,7 @@ public class PlayerHealth : MonoBehaviour {
 	public int health;
 	private SpriteRenderer healthbar1;
 	private SpriteRenderer healthbar2;
-
+	private float hitTime;
 
 	void Start () {
 		healthbar1 = GameObject.Find("heart1").GetComponent<SpriteRenderer>();
@@ -24,5 +24,18 @@ public class PlayerHealth : MonoBehaviour {
 		}
 	}
 
+	void OnCollisionEnter2D ( Collision2D Enemyhit){
+		if (Enemyhit.gameObject.tag == "Coco") {
+			if(hitTime + 0.5f < Time.time){
+			hitTime = Time.time;
+			health -= 1;
 
+			float verticalPush = Enemyhit.gameObject.transform.position.y - transform.position.y;
+			float horizontalPush = Enemyhit.gameObject.transform.position.x - transform.position.x;
+
+			GetComponent<Rigidbody2D>().AddForce( new Vector2 (-horizontalPush,-verticalPush)*1000);
+			}
+		}
+
+	}
 }
