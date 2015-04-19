@@ -38,7 +38,9 @@ public class PlayerHealth : MonoBehaviour {
 			if(hitTime + 0.5f < Time.time){
 			hitTime = Time.time;
 			health -= 1;
-
+			
+			Enemyhit.gameObject.GetComponent<AI1>().makeDamage(1);
+			//Debug.Log (s.healthpoints);
 			GetComponent<SpriteRenderer>().material = Hit;
 
 			float verticalPush = Enemyhit.gameObject.transform.position.y - transform.position.y;

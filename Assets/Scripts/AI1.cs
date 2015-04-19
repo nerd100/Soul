@@ -14,12 +14,20 @@ public class AI1 : MonoBehaviour {
 	private bool stun;
 	private float stuntime;
 
+	public int healthpoints;
+
 	void Start (){
 		speed = 1;
 		stuntime = 0;
 		stun = false;
 		Wall = 1 << 8;
 
+	}
+
+	public void makeDamage(int damageVal) {
+		this.healthpoints -= damageVal;
+		if (this.healthpoints <= 0)
+			Destroy (gameObject);
 	}
 
 	void Update () {
@@ -54,7 +62,7 @@ public class AI1 : MonoBehaviour {
 			speed = 0;
 			stun = true;
 			stuntime = 1;
-
+			healthpoints -= 20;
 		}
 
 	}

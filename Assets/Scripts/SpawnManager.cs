@@ -27,7 +27,13 @@ public class SpawnManager : MonoBehaviour {
 	}
 
 	void Update () {
-		//foreach(GameObject ga in this.currentEnemies)
-		//	ga.GetComponents<Scri
+		/*foreach (GameObject ga in this.enemiesList)
+			if (ga.GetComponent<AI1> ().healthpoints == 0) {
+				GameObject ga2 = ga;
+				this.enemiesList.RemoveAt(this.enemiesList.IndexOf(ga));
+				
+				Destroy (ga2);
+				this.currentEnemies--;
+			}*/
 	}
 }

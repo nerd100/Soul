@@ -353,6 +353,10 @@ Prefab:
       propertyPath: m_TagString
       value: Coco
       objectReference: {fileID: 0}
+    - target: {fileID: 11448654, guid: 8553f9679ddeb4d42ab8f689f6609bf4, type: 2}
+      propertyPath: healthpoints
+      value: 40
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8553f9679ddeb4d42ab8f689f6609bf4, type: 2}
   m_IsPrefabParent: 0
