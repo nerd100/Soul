@@ -15,18 +15,27 @@ public class Transformation : MonoBehaviour {
 		ani = GetComponent<Animator>();
 	}
 
+
+	void Update(){
+
+		if (Input.GetKey (KeyCode.G)) {
+			ani.SetBool ("combat", true);
+		} else {
+			ani.SetBool ("combat", false);
+		}
+	}
 	void FixedUpdate(){
 		Vector3 transplayer=new Vector3(0,0,0);
 		Vector3 transsword=new Vector3(0,0,0);
-		Vector3 rotsword=new Vector3(0,0,0);
 		
 		transplayer = posplayer.transform.position;
 		transsword = possword.transform.position;
 		
 	
-		if (Input.GetKeyDown (KeyCode.G)) {
-			ani.Play ("attack");
-		} 
+
+
+
+
 		//rotplayer = posplayer.rotation.eulerAngles;
 		//		Debug.Log (transplayer + "_" + rotplayer);
 		if (Input.GetKey (KeyCode.D)) {
