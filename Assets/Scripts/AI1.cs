@@ -25,12 +25,12 @@ public class AI1 : MonoBehaviour {
 	void Update () {
 
 		Player = GameObject.Find ("Player").transform.position;
-		Enemy = GameObject.Find ("Coco").transform.position;
+		Enemy = gameObject.GetComponent<Transform>().transform.position;
 		distance = Vector2.Distance (Player, Enemy);
 
 
 		if (stuntime > 0) {
-			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;// (Playerdirection.normalized * speed);
+			GetComponent<Rigidbody2D>().velocity = Vector2.zero;// (Playerdirection.normalized * speed);
 			stuntime -= Time.deltaTime;
 		} else {
 			speed = 1;
