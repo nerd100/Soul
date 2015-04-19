@@ -12,6 +12,7 @@ public class PlayerHealth : MonoBehaviour {
 	public int dmg;
 
 
+
 	void Start () {
 		healthbar1 = GameObject.Find("heart1").GetComponent<SpriteRenderer>();
 		healthbar2 = GameObject.Find("heart2").GetComponent<SpriteRenderer>();
@@ -21,7 +22,6 @@ public class PlayerHealth : MonoBehaviour {
 
 	void Update () {
 		dmg = 0;
-
 
 		if (hitTime + 0.1f < Time.time) {
 
@@ -35,8 +35,7 @@ public class PlayerHealth : MonoBehaviour {
 			if(hitTime + 0.5f < Time.time){
 			hitTime = Time.time;
 			health -= dmg;
-			
-			
+
 			Enemyhit.gameObject.GetComponent<AI1>().makeDamage(1);
 			//Debug.Log (s.healthpoints);
 			GetComponent<SpriteRenderer>().material = Hit;

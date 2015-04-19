@@ -20,20 +20,13 @@ public class SpawnManager : MonoBehaviour {
 	void Spawn () {
 		if (maxEnemies > currentEnemies) {
 			int spawnPointIndex = Random.Range (0, spawnPoints.Length);
-			this.enemiesList.Add((GameObject)Instantiate (enemy, spawnPoints [spawnPointIndex].position, spawnPoints [spawnPointIndex].rotation));
+			Instantiate (enemy, spawnPoints [spawnPointIndex].position, spawnPoints [spawnPointIndex].rotation);
 			Debug.Log("Coco Nr. "+this.currentEnemies+" spawned somewhere!");
 			this.currentEnemies++;
 		}
 	}
 
 	void Update () {
-		/*foreach (GameObject ga in this.enemiesList)
-			if (ga.GetComponent<AI1> ().healthpoints == 0) {
-				GameObject ga2 = ga;
-				this.enemiesList.RemoveAt(this.enemiesList.IndexOf(ga));
-				
-				Destroy (ga2);
-				this.currentEnemies--;
-			}*/
+
 	}
 }
