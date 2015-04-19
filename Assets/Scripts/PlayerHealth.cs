@@ -81,9 +81,10 @@ public class PlayerHealth : MonoBehaviour {
 				GetComponent<Rigidbody2D>().AddForce( new Vector2 (-horizontalPush,-verticalPush)*1000);
 			}
 		}
-		if (health == 0) {
+		if (health <= 0) {
 			Destroy(healthbar2);
 			Destroy(healthbar1);
+
 		}
 		if (health == 1) {
 			Destroy(healthbar2);

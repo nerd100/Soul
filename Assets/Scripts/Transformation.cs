@@ -10,14 +10,18 @@ public class Transformation : MonoBehaviour {
 	private float distance;
 	private Vector3 Enemy;
 	private Vector3 Sword;
+	private bool hitbreak;
+	private float breaktime;
 
 
 	//Vector3 rotplayer=new Vector3(0,0,0);
 	// Use this for initialization
 	void Start () {
 		ani = GetComponent<Animator>();
+		hitbreak = false;
+		breaktime = 0;
 	}
-
+		
 
 	void Update(){
 
@@ -29,11 +33,23 @@ public class Transformation : MonoBehaviour {
 		//	Destroy(gameObject);
 
 		//}
+		if (breaktime > 0) {
 
-		if (Input.GetKey (KeyCode.G)) {
+			breaktime -= Time.deltaTime;
+		} else {
+			breaktime = 0;
+			hitbreak = false;
+		}
+
+
+
+		if (Input.GetKey (KeyCode.G) && !hitbreak) {
+			hitbreak = true;
+			breaktime = 2;
 			ani.SetBool ("combat", true);
 		} else {
 			ani.SetBool ("combat", false);
+
 		}
 	}
 	void FixedUpdate(){

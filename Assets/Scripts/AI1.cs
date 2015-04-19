@@ -14,14 +14,16 @@ public class AI1 : MonoBehaviour {
 	private bool stun;
 	private float stuntime;
 	public int healthpoints;
-
+	private bool hitbreak;
+	private float breaktime;
 
 	void Start (){
 		speed = 1;
 		stuntime = 0;
 		stun = false;
 		Wall = 1 << 8;
-
+		hitbreak = false;
+		breaktime = 0;
 
 	}
 
@@ -32,6 +34,17 @@ public class AI1 : MonoBehaviour {
 	}
 
 	void Update () {
+
+
+		if (breaktime > 0) {
+			
+			breaktime -= Time.deltaTime;
+		} else {
+			breaktime = 0;
+			hitbreak = false;
+		}
+
+
 
 		Player = GameObject.Find ("Player").transform.position;
 		Enemy = gameObject.GetComponent<Transform>().transform.position;
@@ -46,9 +59,11 @@ public class AI1 : MonoBehaviour {
 			stun = false;
 		}
 
-		if (distance < 0.5 && (Input.GetKey (KeyCode.G))) {
-			Destroy(gameObject);
-		}
+		if (distance < 0.5 && (Input.GetKey (KeyCode.G)) && hitbreak) {
+			hitbreak = true;
+			breaktime = 20;
+			Destroy (gameObject);
+		} 
 
 
 		if (distance < 3 && !stun) {
