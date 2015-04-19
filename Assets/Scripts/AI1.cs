@@ -8,17 +8,19 @@ public class AI1 : MonoBehaviour {
 	private Vector2 Playerdirection;
 	private float Xdif;
 	private float Ydif;
-	public float speed;
+	private float speed;
 	private int Wall;
-	private float instance;
 	private float distance;
+	private bool stun;
+	private float stuntime;
 
 	void Start (){
-
+		speed = 2;
+		stuntime = 0;
+		stun = false;
 		Wall = 1 << 8;
 
 	}
-
 
 	void Update () {
 
@@ -26,15 +28,34 @@ public class AI1 : MonoBehaviour {
 		Enemy = GameObject.Find ("Coco").transform.position;
 		distance = Vector2.Distance (Player, Enemy);
 
-		if (distance < 3) {
+
+		if (stuntime > 0) {
+			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;// (Playerdirection.normalized * speed);
+			stuntime -= Time.deltaTime;
+		} else {
+			speed = 3;
+			stun = false;
+		}
+
+		if (distance < 2.5 && !stun) {
 			Xdif = Player.x - transform.position .x;
 			Ydif = Player.y - transform.position.y;
 
 			Playerdirection = new Vector2 (Xdif, Ydif);
 
-			if (!Physics2D.Raycast (transform.position, Playerdirection, 3, Wall))
+			if (!Physics2D.Raycast (transform.position, Playerdirection, 3, Wall)){
 				GetComponent<Rigidbody2D> ().AddForce (Playerdirection.normalized * speed);
+		}
+		}
+	}
+	void OnCollisionEnter2D (Collision2D Playerhit){
+
+		if (Playerhit.gameObject.tag == "Player") {
+			speed = 0;
+			stun = true;
+			stuntime = 1;
 
 		}
+
 	}
 }
