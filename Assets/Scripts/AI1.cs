@@ -15,7 +15,7 @@ public class AI1 : MonoBehaviour {
 	private float stuntime;
 
 	void Start (){
-		speed = 2;
+		speed = 1;
 		stuntime = 0;
 		stun = false;
 		Wall = 1 << 8;
@@ -33,11 +33,11 @@ public class AI1 : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().velocity = Vector2.zero;// (Playerdirection.normalized * speed);
 			stuntime -= Time.deltaTime;
 		} else {
-			speed = 3;
+			speed = 1;
 			stun = false;
 		}
 
-		if (distance < 2.5 && !stun) {
+		if (distance < 3 && !stun) {
 			Xdif = Player.x - transform.position.x;
 			Ydif = Player.y - transform.position.y;
 
