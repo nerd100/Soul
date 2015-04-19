@@ -34,14 +34,8 @@ public class PlayerHealth : MonoBehaviour {
 			dmg = 1;
 			if(hitTime + 0.5f < Time.time){
 			hitTime = Time.time;
-<<<<<<< HEAD
-			health -= 1;
-
-=======
 			health -= dmg;
-			
-			
->>>>>>> a467cb0d4d9c9d7cd95acb265650de866584cdcf
+
 			Enemyhit.gameObject.GetComponent<AI1>().makeDamage(1);
 			//Debug.Log (s.healthpoints);
 			GetComponent<SpriteRenderer>().material = Hit;
