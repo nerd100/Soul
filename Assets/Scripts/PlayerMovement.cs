@@ -16,5 +16,6 @@ public class PlayerMovement : MonoBehaviour {
 			GetComponent<Rigidbody2D> ().AddForce (Vector2.up * speed);
 		if (Input.GetKey (KeyCode.S))
 			GetComponent<Rigidbody2D> ().AddForce (-Vector2.up * speed);
+			
 		}
 }

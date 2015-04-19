@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour {
 	public Material Hit;
 
 
+
 	void Start () {
 		healthbar1 = GameObject.Find("heart1").GetComponent<SpriteRenderer>();
 		healthbar2 = GameObject.Find("heart2").GetComponent<SpriteRenderer>();
@@ -26,7 +27,6 @@ public class PlayerHealth : MonoBehaviour {
 			Destroy(healthbar1);
 		}
 
-
 		if (hitTime + 0.1f < Time.time) {
 
 			GetComponent<SpriteRenderer>().material = Default;
@@ -38,7 +38,7 @@ public class PlayerHealth : MonoBehaviour {
 			if(hitTime + 0.5f < Time.time){
 			hitTime = Time.time;
 			health -= 1;
-			
+
 			Enemyhit.gameObject.GetComponent<AI1>().makeDamage(1);
 			//Debug.Log (s.healthpoints);
 			GetComponent<SpriteRenderer>().material = Hit;

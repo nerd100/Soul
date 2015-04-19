@@ -62,8 +62,8 @@ public class AI1 : MonoBehaviour {
 			speed = 0;
 			stun = true;
 			stuntime = 1;
-			healthpoints -= 20;
+			//healthpoints -= 20;
 		}
-
 	}
+	
 }
