@@ -6,10 +6,12 @@ public class cocomover : MonoBehaviour {
 	// Use this for initialization
 	private float posx;
 	private float posy;
-
+	private float playerx;
+	private float playery;
 	private Vector3 enemy;
 	public Animator coani;
 	public GameObject ga;
+	public Transform player;
 	
 	// Use this for initialization
 	void Start () {
@@ -21,30 +23,32 @@ public class cocomover : MonoBehaviour {
 		enemy = ga.GetComponent<Transform>().transform.position;
 		posx = enemy.x;
 		posy = enemy.y;
+		playerx= player.transform.position.x;
+		playery = player.transform.position.y;
 
 
-		if (posx >= 0 && posy >= 0) {
-			coani.SetBool ("right", true);
+		if (posx >= playerx && posy >= playery) {
+			coani.SetBool ("left", true);
 		} else {
-			coani.SetBool ("right", false);
+			coani.SetBool ("left", false);
 		}
 
-		if (posx >= 0 && posy < 0) {
-			coani.SetBool("bot",true);
-		}else {
-			coani.SetBool ("bot", false);
-		}
-
-		if (posx <= 0 && posy > 0) {
-			coani.SetBool("up",true);	
+		if (posx >= playerx && posy <= playery) {
+			coani.SetBool("up",true);
 		}else {
 			coani.SetBool ("up", false);
 		}
 
-		if (posx < 0 && posy <= 0) {
-			coani.SetBool("left",true);	
+		if (posx <= playerx && posy >= playery) {
+			coani.SetBool("bot",true);	
 		}else {
-			coani.SetBool ("left", false);
+			coani.SetBool ("bot", false);
+		}
+
+		if (posx <= playerx && posy <= playery) {
+			coani.SetBool("right",true);	
+		}else {
+			coani.SetBool ("right", false);
 		}
 
 
