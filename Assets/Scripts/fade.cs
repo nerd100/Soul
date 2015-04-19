@@ -30,7 +30,7 @@ public class fade : MonoBehaviour {
 			this.fademax = 0f;
 			this.fademin = 1f;
 			this.starttime = Time.time;
-			this.fadeduration = 7f;
+			this.fadeduration = 6f;
 		}
 		if (played && sr.color.a == 0f)
 			Application.LoadLevel(nextScene);
