@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ga: {fileID: 363381582}
-  nextScene: 5469746c6553637265656e
+  nextScene: TitleScreen
 --- !u!95 &363381586
 Animator:
   serializedVersion: 3
