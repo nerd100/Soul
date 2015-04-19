@@ -13,14 +13,15 @@ public class AI1 : MonoBehaviour {
 	private float distance;
 	private bool stun;
 	private float stuntime;
-
 	public int healthpoints;
+
 
 	void Start (){
 		speed = 1;
 		stuntime = 0;
 		stun = false;
 		Wall = 1 << 8;
+
 
 	}
 
@@ -45,6 +46,11 @@ public class AI1 : MonoBehaviour {
 			stun = false;
 		}
 
+		if (distance < 0.5 && (Input.GetKey (KeyCode.G))) {
+			Destroy(gameObject);
+		}
+
+
 		if (distance < 3 && !stun) {
 			Xdif = Player.x - transform.position.x;
 			Ydif = Player.y - transform.position.y;
@@ -53,7 +59,7 @@ public class AI1 : MonoBehaviour {
 
 			if (!Physics2D.Raycast (transform.position, Playerdirection, 3, Wall)){
 				GetComponent<Rigidbody2D> ().AddForce (Playerdirection.normalized * speed);
-		}
+			}
 		}
 	}
 	void OnCollisionEnter2D (Collision2D Playerhit){

@@ -1107,7 +1107,7 @@ GameObject:
   - 114: {fileID: 782782652}
   m_Layer: 0
   m_Name: Golem
-  m_TagString: Untagged
+  m_TagString: Golem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1633,19 +1633,6 @@ MonoBehaviour:
   health: 2
   Default: {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
   Hit: {fileID: 2100000, guid: 98f6580e0feda7949bbcd68d566b0cad, type: 2}
---- !u!61 &936838708
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 936838698}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: -.400000006, y: 0}
-  serializedVersion: 2
-  m_Size: {x: .100000001, y: .200000003}
 --- !u!1 &1034550704
 GameObject:
   m_ObjectHideFlags: 0
@@ -3332,7 +3319,7 @@ GameObject:
   - 114: {fileID: 1770299857}
   m_Layer: 0
   m_Name: Planti
-  m_TagString: Untagged
+  m_TagString: Planti
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
