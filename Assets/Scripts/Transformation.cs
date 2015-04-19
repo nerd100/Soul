@@ -7,6 +7,9 @@ public class Transformation : MonoBehaviour {
 	public Transform possword;
 	int roty = 0;
 	public Animator ani;
+	private float distance;
+	private Vector3 Enemy;
+	private Vector3 Sword;
 
 
 	//Vector3 rotplayer=new Vector3(0,0,0);
@@ -17,6 +20,15 @@ public class Transformation : MonoBehaviour {
 
 
 	void Update(){
+
+		//Sword = GameObject.Find ("Schwert3").transform.position;
+		//Enemy = GameObject.Find("Coco").transform.position;
+		//distance = Vector2.Distance (Sword, Enemy);
+
+		//if (distance < 6 && (Input.GetKey (KeyCode.G))) {
+		//	Destroy(gameObject);
+
+		//}
 
 		if (Input.GetKey (KeyCode.G)) {
 			ani.SetBool ("combat", true);
